@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+
+
+    <!-- Content specific to the child template -->
+{% load static %}
+{% block content %}
+<h2>{{success}}</h2>
+        <form action="/submitApplication/{{job_id}}/{{username}}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="firstname">
+                <label for="firstname">Username:</label><br>
+                <input type="text" name="username" id="">
+            </div>
+            <div class="lastname">
+                <label for="lastname">Full Name:</label><br>
+                <input type="text" name="fullname" id="">
+            </div>
+            <div class="email">
+                <label for="email">Email:</label><br>
+                <input type="email" name="email" id="">
+            </div>  
+            <div class="query">
+                <label for="query">Why do you want to join the organization ?</label><br>
+                <textarea name="queryanswer" id="" cols="30" rows="10"></textarea>
+            </div> 
+            <div class="uploadcv">
+                <label for="cv">Upload CV</label><br>
+                <input type="file" name="cv" id="">
+            </div> 
+            <div class="submit-container">
+                <input type="submit" value="Apply">
+            </div>        
+        </form>
+        {% endblock %}

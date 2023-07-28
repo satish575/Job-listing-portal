@@ -1,0 +1,43 @@
+
+{% extends 'base.html' %}
+
+
+
+
+    <!-- Content specific to the child template -->
+{% load static %}
+{% block content %}
+<section class="job-avaliable-title">
+    <h2>Jobs Avaliable</h2>
+
+
+   
+       
+    
+</section>
+<section class="jobsAvaliable">
+    {% for job in jobavaliable %}
+    <div class="job">
+        <div class="job-title-description">
+            <div class="title">
+                <p>job title:<span>{{job.jobTitle}}</span></p>
+            </div>
+            <div class="description">
+                <p>job description:<span>{{job.jobDescription}}</span></p>
+            </div>
+            <div class="requirement">
+                <p>job requirement:<span>{{job.jobRequirement}}</span></p>
+            </div>
+            <div class="companyname">
+                <p>Organization name:<span>{{job.companyName}}</span></p>
+            </div>
+        </div>
+        <div class="job-actions">
+            <div class="details-action">
+                <a href="/jobDetail/{{job.id}}/{{username}}">Details</a>
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+</section>
+{% endblock %}

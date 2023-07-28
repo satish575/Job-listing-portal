@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: rgb(59, 82, 103);
+            color: white;
+            
+            
+        }
+        header a{
+            text-decoration: none;
+            color: white;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: blueviolet;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 5px;
+        }
+        .AddNewJob{
+            display: flex;
+            width: 300px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        main{
+            text-align: center;
+            background-color: gray;
+            color: white;
+            padding-bottom: 50px;
+
+        }
+        .container{
+            margin-top: 50px;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .applicants{
+            padding: 20px 30px;
+            background-color: black;
+            width: 500px;
+            border-radius: 20px;
+        }
+        .AddNewJob{
+            display: flex;
+            width: 300px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .form-container{
+            background-color: gray;
+            text-align: center;
+        }
+        form{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: rgb(57, 57, 92);
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            
+        }
+        input[type="text"]{
+            width: 300px;
+            height: 50px;
+            border-radius: 50px;
+            outline: none;
+            border: none;
+            padding-left: 10px;
+            color: rgb(130, 48, 48);
+            font-weight: bold;
+            
+        }
+        #desc{
+            border-radius: 20px;
+            outline: none;
+            border: none;
+            padding-left: 10px;
+            padding-top: 10px;
+            color: rgb(130, 48, 48);
+            font-weight: bold;
+        }
+        #req{
+            border-radius: 20px;
+            outline: none;
+            border: none;
+            padding-left: 10px;
+            padding-top: 10px;
+            color: rgb(130, 48, 48);
+            font-weight: bold;
+        }
+        #submit{
+            outline: none;
+            border: none;
+            padding: 15px 20px;
+            margin-top: 5px;
+            color: white;
+            background-color: rgb(130, 48, 48);
+            border-radius: 10px;
+            cursor: pointer;
+
+        }
+        .AddNewJob{
+            display: flex;
+            width: 300px;
+            justify-content: space-between;
+            align-items: center;
+        }
+       .jobsAvaliable{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        background-color: #765D5D;
+        align-items: center;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin-top: 20px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 20px;
+       }
+       .job{
+        background-color: #6E7D94;
+        width: 90%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 20px 20px;
+        color: white;
+        font-weight:bold;
+        font-size:20px;
+       }
+       .job a{
+        text-decoration: none;
+        background-color: #2FB254;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 20px;
+       }
+       #delete{
+        background-color: red;
+       }
+
+       .job-avaliable-title{
+        text-align: center;
+        margin-top: 50px;
+        color: #8B2828;
+       }
+       .job-actions{
+        width:200px;
+        
+       }
+       .details-action{
+        display:flex;
+        gap:20px;
+       }
+       .form-container{
+        background-color: gray;
+        text-align: center;
+    }
+    form{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: rgb(57, 57, 92);
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        
+    }
+    input[type="text"]{
+        width: 300px;
+        height: 50px;
+        border-radius: 50px;
+        outline: none;
+        border: none;
+        padding-left: 10px;
+        color: rgb(130, 48, 48);
+        font-weight: bold;
+        
+    }
+    #desc{
+        border-radius: 20px;
+        outline: none;
+        border: none;
+        padding-left: 10px;
+        padding-top: 10px;
+        color: rgb(130, 48, 48);
+        font-weight: bold;
+    }
+    #req{
+        border-radius: 20px;
+        outline: none;
+        border: none;
+        padding-left: 10px;
+        padding-top: 10px;
+        color: rgb(130, 48, 48);
+        font-weight: bold;
+    }
+    #submit{
+        outline: none;
+        border: none;
+        padding: 15px 20px;
+        margin-top: 5px;
+        color: white;
+        background-color: rgb(130, 48, 48);
+        border-radius: 10px;
+        cursor: pointer;
+
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="heading">
+            <h1>Hire Hub</h1>
+        </div>
+        <div class="message">
+            <p>Hello admin</p>
+        </div>
+        <div class="AddNewJob">
+            <a href="/adminpanel">Home</a>
+            <a href="/addnewjob">Add New Job</a>
+            <a href="/viewjob">View Jobs</a>
+        </div>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    
+</main>
+</body>
+</html>

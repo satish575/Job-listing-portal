@@ -1,0 +1,18 @@
+
+{% extends 'base.html' %}
+
+
+
+
+    <!-- Content specific to the child template -->
+{% load static %}
+{% block content %}
+<section class="hero-header">
+    <div class="hero-paragraph">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et odit, ex necessitatibus voluptate ducimus totam. Quod laborum amet maxime est itaque nesciunt dolor?</p>
+    </div>
+    <div class="hero-image">
+        <img src="{% static 'images/pexels-pixabay-416405.jpg' %}"" alt="">
+    </div>
+</section>
+{% endblock %}

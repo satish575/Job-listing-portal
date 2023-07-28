@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: rgb(59, 82, 103);
+            color: white;
+            
+            
+        }
+        header a{
+            text-decoration: none;
+            color: white;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: blueviolet;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 5px;
+        }
+        .AddNewJob{
+            display: flex;
+            width: 300px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        main{
+            text-align: center;
+            background-color: gray;
+            color: white;
+            padding-bottom: 50px;
+
+        }
+        .container{
+            margin-top: 50px;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .applicants{
+            padding: 20px 30px;
+            background-color: black;
+            width: 500px;
+            border-radius: 20px;
+        }
+        main{
+            padding: 50px;
+        }
+        .container{
+            background-color: rgb(255, 255, 255);
+            color: black;
+            padding:50px;
+
+        }
+        .container a{
+            text-decoration:none;
+            color:white;
+            font-size:20px;
+            padding-left:10px;
+            padding-right:10px;
+            padding-top:5px;
+            padding-bottom:5px;
+            background-color:green;
+            border-radius:5px;
+            
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="heading">
+            <h1>Hire Hub</h1>
+        </div>
+        <div class="message">
+            <p>Hello admin</p>
+        </div>
+        <div class="AddNewJob">
+            <a href="/addnewjob">Add New Job</a>
+            <a href="/viewjob">View Jobs</a>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="username">
+               <h2>{{username}}</h2>
+            </div>
+            <div class="fullname">
+                <h2>{{fullname}}</h2>
+            </div>
+            <div class="email">
+                <h2>{{email}}</h2>
+            </div>
+            <div class="jobprofile">
+                <h2>{{jobtitle}}</h2>
+            </div>
+            <div class="query">
+                <h2>{{query}}</h2>
+            </div>
+            <div class="cv">
+            <a href="/media/{{cvlink}}">Download CV</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

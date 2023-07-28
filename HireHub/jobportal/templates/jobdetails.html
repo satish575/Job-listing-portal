@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+
+
+    <!-- Content specific to the child template -->
+{% load static %}
+{% block content %}
+<section class="job-details">
+    <div class="job-title-date">
+        <div class="jobtitle">
+            <h2>{{jobdetails.jobTitle}}</h2>
+        </div>
+        <div class="date-of-creation">
+            <p>created on: <span>20/12/2023</span></p>
+        </div>
+    </div>
+        
+        <div class="job-description">
+            <p>Description: {{jobdetails.jobDescription}}</p>
+        </div>
+        <div class="job-requirement">
+            <div class="technical-skills">
+             <p>Requirement: {{jobdetails.jobRequirement}}</p>
+            </div>
+        </div>
+        <div class="company-name">
+            <p>Company Name: {{jobdetails.companyName}}</p>
+        </div>
+        <div class="actionButtons">
+            <a href="/applyApplication/{{jobdetails.id}}/{{username}}">apply</a>
+        </div>
+</section>
+{% endblock %}

@@ -1,0 +1,30 @@
+    {% extends 'adminpanelbase.html' %}
+        {% block content %}
+        
+        <div class="title">
+            <h2>Applicants</h2>
+        </div>
+        <div class="container">
+            {%for i in applicant%}
+            <div class="applicants">
+               <div class="applicantsname">
+                <h3>Name: {{i.fullname}}</h3>
+               </div>
+               <div class="applicantsemail">
+                <h3>Email: {{i.email}}</h3>
+               </div>
+               <div class="userquery">
+                 <h3>Ans: {{i.query}}</h3>
+               </div>
+               <div class="jobroles">
+                <h3>job id: {{i.jobid}}</h3>
+            </div>
+            <div class="detailsbtn">
+                <a href="/Applicantdetails/{{i.id}}/{{i.jobid}}">Details</a>
+            </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+        {% endblock %}
+  

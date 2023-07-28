@@ -1,0 +1,183 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Fasthand&family=Freehand&family=Kaushan+Script&family=Moon+Dance&family=MuseoModerno&family=Nunito&family=Open+Sans&family=Roboto+Mono:wght@500&family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
+    <title>Login page</title>
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+        }
+        .logo{
+            font-family: Kaushan Script;
+            cursor: pointer;
+        }
+        header{
+            background-color: #D9D9D9;
+            padding: 20px 30px;
+        }
+        .social-media-link{
+            display: flex;
+            gap: 10px;
+        }
+        .social-media-link img{
+            width: 20px;
+            height: 20px;
+        }
+        
+        .top-head{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .login-conatiner{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            width: 700px;
+            height: 400px;
+            background-color: #D9D9D9;
+
+        }
+        .login-section{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            gap: 50px;
+            font-family: Open Sans;
+        }
+        .login-section h3{
+            color: #8B2828;
+        }
+        .login-conatiner{
+            display: flex;
+            
+        }
+        .image-section{
+            width: 50%;
+            height: 100%;
+        
+        }
+        .image-section img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .username-password-container{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .message-for-page{
+            font-family: Open Sans;
+            font-weight: bold;
+            font-size: 20px;
+            color: #8B2828;
+        }
+        #username{
+            outline: none;
+            border: none;
+            width: 200px;
+            height: 40px;
+            border-radius: 20px;
+            padding-left: 20px;
+            font-weight: bold;
+            font-size: 15px;
+            color: #8B2828;
+        }
+        #password{
+            outline: none;
+            border: none;
+            width: 200px;
+            height: 40px;
+            border-radius: 20px;
+            padding-left: 20px;
+            font-weight: bold;
+            font-size: 15px;
+            color: #8B2828;
+
+        }
+        #login-btn{
+            outline: none;
+            border: none;
+            color: white;
+            background-color: #8B2828;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 15px 50px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        .sign-up-message a{
+            text-decoration: none;
+            color: #8B2828;
+        }
+        #login-btn:hover{
+            transition: 0.5s;
+            background-color: rgb(42, 133, 42);
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <!-- this header will contain logo ,social media's link and the page name -->
+        <section class="top-head">
+            <div class="logo">
+                <h2>Hire Hub</h2>
+            </div>
+            <div class="message-for-page">
+                <h2>Login to continue</h2>
+            </div>
+            <div class="social-media-link">
+                <div class="facebook">
+                    <img src="{% static 'images/facebook.png' %}" alt="">
+                </div>
+                <div class="instagram">
+                     <img src="{% static 'images/instagram.png' %}" alt="">
+                </div>
+                
+            </div>
+        </section>
+    </header>
+    <main>
+        <!-- this main will contain actual content of page just like this is login page -->
+        <section class="login-conatiner">
+            <div class="image-section">
+                  <img src="{% static 'images/pexels-pixabay-416405.jpg' %}" alt="">
+            </div>
+            <div class="login-section">
+                <div class="login-section-heading">
+                    <h3>Log in</h3>
+                </div>
+                <form action='/login/' method='post'>
+                    {% csrf_token %}
+                    
+                    <div class="username-password-container">
+                        <div class="username">
+                            <input type="text" name="username" id="username" placeholder="username">
+                        </div>
+                        <div class="password">
+                            <input type="password" name="password" id="password" placeholder="password">
+                        </div>
+                    </div>
+                    <div class="login-button">
+                        <input type="submit" value="Login" id="login-btn">
+                    </div>
+                </form>
+                
+                <div class="sign-up-message">
+                    <p>Don't have a account ? <a href="/signup">Signup</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

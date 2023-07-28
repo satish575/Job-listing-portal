@@ -1,0 +1,250 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Fasthand&family=Freehand&family=Kaushan+Script&family=Moon+Dance&family=MuseoModerno&family=Nunito&family=Open+Sans&family=Roboto+Mono:wght@500&family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
+    <title>signup page</title>
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+        }
+        .logo{
+            font-family: Kaushan Script;
+            cursor: pointer;
+        }
+        header{
+            background-color: #D9D9D9;
+            padding: 20px 30px;
+        }
+        .social-media-link{
+            display: flex;
+            gap: 10px;
+        }
+        .social-media-link img{
+            width: 20px;
+            height: 20px;
+        }
+        
+        .top-head{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .login-conatiner{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            width: 800px;
+            height: auto;
+            background-color: #D9D9D9;
+
+        }
+        .login-section{
+            width: 50%;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            gap: 30px;
+            font-family: Open Sans;
+            
+        }
+        .login-section h3{
+            color: #8B2828;
+        }
+        .login-conatiner{
+            display: flex;
+            
+        }
+        .image-section{
+            width: 50%;
+            height: 600px;
+        
+        }
+        .image-section img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+        .username-password-container{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .message-for-page{
+            font-family: Open Sans;
+            font-weight: bold;
+            font-size: 20px;
+            color: #8B2828;
+        }
+        
+        #login-btn{
+            outline: none;
+            border: none;
+            color: white;
+            background-color: #8B2828;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 15px 50px;
+            border-radius: 50px;
+            cursor: pointer;
+
+        }
+        #login-btn:hover{
+            transition: 0.5s;
+            background-color: rgb(42, 133, 42);
+        }
+        .sign-up-message a{
+            text-decoration: none;
+            color: #8B2828;
+        }
+        .username-password-container input[type="text"]{
+            outline: none;
+            border: none;
+            width: 200px;
+            height: 40px;
+            border-radius: 20px;
+            padding-left: 20px;
+            font-weight: bold;
+            font-size: 15px;
+            color: #8B2828;
+        }
+        .username-password-container input[type="password"]{
+            outline: none;
+            border: none;
+            width: 200px;
+            height: 40px;
+            border-radius: 20px;
+            padding-left: 20px;
+            font-weight: bold;
+            font-size: 15px;
+            color: #8B2828;
+        }
+        .username-password-container input[type="email"]{
+            outline: none;
+            border: none;
+            width: 200px;
+            height: 40px;
+            border-radius: 20px;
+            padding-left: 20px;
+            font-weight: bold;
+            font-size: 15px;
+            color: #8B2828;
+        }
+        #user-profile{
+           color: white;
+           font-weight: bold;
+           padding: 10px 30px;
+           border-radius: 20px;
+           background-color: #8B2828;
+        }
+        .login-button{
+            margin-top:10px
+        }
+        /* file upload button */
+input[type="file"]::file-selector-button {
+    border-radius: 4px;
+    padding: 0 16px;
+    height: 30px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+    margin-right: 16px;
+    transition: background-color 200ms;
+  }
+  
+  /* file upload button hover state */
+  input[type="file"]::file-selector-button:hover {
+    background-color: #f3f4f6;
+  }
+  
+  /* file upload button active state */
+  input[type="file"]::file-selector-button:active {
+    background-color: #e5e7eb;
+  }
+  
+  /* ------------------------ */
+  
+  /* default boilerplate to center input */
+  
+    </style>
+</head>
+<body>
+    <header>
+        <!-- this header will contain logo ,social media's link and the page name -->
+        <section class="top-head">
+            <div class="logo">
+                <h2>Hire Hub</h2>
+            </div>
+            <div class="message-for-page">
+                <h2>Register to continue</h2>
+            </div>
+            <div class="social-media-link">
+                <div class="facebook">
+                    <img src="{% static 'images/facebook.png' %}" alt="">
+                </div>
+                <div class="instagram">
+                     <img src="{% static 'images/instagram.png' %}" alt="">
+                </div>
+                
+            </div>
+        </section>
+    </header>
+    <main>
+        <!-- this main will contain actual content of page just like this is login page -->
+        <section class="login-conatiner">
+            <div class="image-section">
+                  <img src="https://images.pexels.com/photos/3127880/pexels-photo-3127880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+            </div>
+            <div class="login-section">
+                <div class="login-section-heading">
+                    <h3>Sign up</h3>
+                </div>
+                <form action="/RegisterUser/" method="post">
+                    {% csrf_token %}
+                <div class="username-password-container">
+                    <div class="firstname">
+                        <input type="text" name="firstname" id="" placeholder="firstname" value="{{firstnamevalue}}">
+                        <p>{{firstname}}</p>
+                    </div>
+                    <div class="lastname">
+                        <input type="text" name="lastname" id="" placeholder="lastname" value="{{lastnamevalue}}">
+                        <p>{{lastname}}</p>
+                    </div>
+                    <div class="email">
+                        <input type="email" name="email" id="" placeholder="email" value="{{emailvalue}}">
+                        <p>{{email}}</p>
+                    </div>
+                    <div class="username">
+                        <input type="text" name="username" id="username" placeholder="username" value="{{usernamevalue}}">
+                        <p>{{username}}</p>
+                    </div>
+                    <div class="password">
+                        <input type="password" name="password" id="password" placeholder="password" value="{{passwordvalue}}">
+                        <p>{{password}}</p>
+                    </div>
+                    <div class="confirmpassword">
+                        <input type="password" name="confirmpassword" id="" placeholder="confirm password">
+                        <p>{{confirmpassword}}</p>
+                    </div>
+                    
+                </div>
+                <div class="login-button">
+                    <input type="submit" value="Register" id="login-btn" placeholder="choose photo">
+                </div>
+            </form>
+                <div class="sign-up-message">
+                    <p>Already have a account ? <a href="/">Login</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

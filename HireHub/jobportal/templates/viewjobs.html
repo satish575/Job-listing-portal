@@ -1,0 +1,35 @@
+{% extends 'adminpanelbase.html' %}
+{% block content %}
+        <section class="job-avaliable-title">
+            <h2>Jobs Avaliable</h2>
+        </section>
+        <section class="jobsAvaliable">
+            {% for i in jobs %}
+            <div class="job">
+                <div class="job-title-description">
+                    <div class="title">
+                        <p>job title:<span>{{i.jobTitle}}</span></p>
+                    </div>
+                    <div class="description">
+                        <p>job description:<span>{{i.jobDescription}}</span></p>
+                    </div>
+                    <div class="requirement">
+                        <p>job requirement:<span>{{i.jobRequirement}}</span></p>
+                    </div>
+                    <div class="companyname">
+                        <p>Organization name:<span>{{i.companyName}}</span></p>
+                    </div>
+                </div>
+                <div class="job-actions">
+                    <div class="details-action">
+                        <a href="/editjob/{{i.id}}" id="edit">Edit</a>
+                        <a href="/delete/{{i.id}}" id="delete">Delete</a>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+            
+            
+        </section>
+        {% endblock %}
+     
