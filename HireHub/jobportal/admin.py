@@ -3,5 +3,6 @@ from . import models
 # Register your models here.
 admin.site.register(models.User)
 admin.site.register(models.Jobs)
+
 admin.site.register(models.Applications)
 

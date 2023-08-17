@@ -20,7 +20,10 @@ urlpatterns = [
     path('delete/<int:job_id>',views.deleteJob),
     path('addJob/',views.addJob),
     path('Applicantdetails/<int:applicantid>/<int:jobid>',views.Applicantdetails),
-    path('logout/',views.logout)
+    path('logout/',views.logout),
+    path("adminpanellogin/",views.adminpanellogin),
+    path("loginAdmin/",views.loginAdmin)
+    
     
    
 ]

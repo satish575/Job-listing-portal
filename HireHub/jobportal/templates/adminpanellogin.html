@@ -134,7 +134,7 @@
                 <h2>Hire Hub</h2>
             </div>
             <div class="message-for-page">
-                <h2>Login to continue</h2>
+                <h2>Admin</h2>
             </div>
             <div class="social-media-link">
                 <div class="facebook">
@@ -158,9 +158,9 @@
             </div>
             <div class="login-section">
                 <div class="login-section-heading">
-                    <h3>Log in</h3>
+                    <h3>Admin Log in</h3>
                 </div>
-                <form action='/login/' method='post'>
+                <form action='/loginAdmin/' method='post'>
                     {% csrf_token %}
                     
                     <div class="username-password-container">
@@ -176,9 +176,7 @@
                     </div>
                 </form>
                 
-                <div class="sign-up-message">
-                    <p>Don't have a account ? <a href="/signup">Signup</a></p>
-                </div>
+                
             </div>
         </section>
     </main>

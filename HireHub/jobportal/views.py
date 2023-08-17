@@ -49,8 +49,7 @@ def getApplicationForm(request,job_id,username):
 def getHomepage(request,username):
    return render(request,'home.html',{"username":username})
 def loginuser(request):
-    if request.POST['username']=="satish" and request.POST['password']=="satish":
-        return HttpResponseRedirect('/adminpanel')
+    
     if models.User.objects.get(username=request.POST['username']):
      userdata=models.User.objects.get(username=request.POST['username'])
      if request.POST['password'] == userdata.password:
@@ -112,10 +111,19 @@ def RegisterUser(request):
            return HttpResponse("user registered successfully")
     return HttpResponse("user registeration failed")
 
+def adminpanellogin(request):
+    return render(request,"adminpanellogin.html")
 
+def loginAdmin(request):
+    if request.method=="POST":
+        username=request.POST['username']
+        password=request.POST['password']
+        if username=="satish" and password=="satish":
+             return HttpResponseRedirect('/adminpanel')
 def adminPanel(request):
        applicantsdata=models.Applications.objects.all()
        return render(request,'adminpanel.html',{"applicant":applicantsdata})
+   
 def addnewjob(request):
     return render(request,'addnewjob.html')
 def addJob(request):
